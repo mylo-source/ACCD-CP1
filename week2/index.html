@@ -17,13 +17,18 @@
         nav ul li{margin: 10px auto 10px auto;
              border-bottom: 2px solid black;padding: 8px;}
 
+         .active{font-weight: bold;}
+
         nav ul li:last-child{border-bottom: none;}
 
         nav ul a{text-decoration: none;color: black;
             text-transform: uppercase;}
 
         @media(min-width: 768px) {
-            nav ul {display: flex; flex-direction: row;}
+            nav ul {display: flex; flex-direction: row;
+                justify-content:end ;}
+
+            nav ul li{border-bottom: none;margin: 10px;}
         }
     </style>
 </head>
@@ -32,7 +37,7 @@
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href= "#">Work</a></li>
+                <li class = "active"><a href= "#">Work</a></li>
                 <li><a href="#">Blog</a></li>
             </ul>
         </nav>
