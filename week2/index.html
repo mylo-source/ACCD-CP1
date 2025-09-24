@@ -10,6 +10,10 @@
 
         header, footer {background-color: darkgrey;}
 
+        main{padding: 20px;} 
+        h1, h2, h3, h4, h5, h6{font-weight: 300; 
+                               color: blueviolet ;}
+
         nav ul{margin-top: 0;margin-bottom: 0;
             padding: 20px;list-style: none;
             text-align: center;}
@@ -18,6 +22,10 @@
              border-bottom: 2px solid black;padding: 8px;}
 
          .active{font-weight: bold;}
+
+         .cursive{font-style: italic;}
+
+         #addcontent{color: greenyellow;}
 
         nav ul li:last-child{border-bottom: none;}
 
@@ -36,13 +44,16 @@
     <header> 
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
+                <li class="cursive"><a href="#">Home</a></li>
                 <li class = "active"><a href= "#">Work</a></li>
-                <li><a href="#">Blog</a></li>
+                <li class="cursive"><a href="#">Blog</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <h1>Responsive example</h1>
+        <p>Cheese</p>
+        <p id="addcontent">I like cheese</p>
 
 
     </main>
