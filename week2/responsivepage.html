@@ -1,0 +1,207 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Menuca Bakery</title> 
+    <style> 
+        body { 
+            margin: 0; 
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+            background-color: mistyrose; 
+            } 
+        main.content { 
+            display: flex; 
+            flex-direction: row; 
+            min-height: 100vh; 
+            } 
+        nav { background-color: lightgrey; 
+              width: 120px; 
+              min-height: 100vh; 
+              } 
+        nav ul { 
+            list-style: none; 
+            padding: 0; 
+            margin: 0;
+             } 
+        nav ul li { 
+            border-bottom: 2px solid black; 
+            padding: 15px;
+            } 
+        nav ul li:last-child { 
+            border-bottom: none; } 
+        nav ul a { 
+            text-decoration: none; 
+            color: black; 
+            text-transform: uppercase; 
+            font-weight: bold; 
+            } 
+        .content-text { 
+            flex: 1; 
+            padding: 20px; 
+            } 
+        .content-text img { 
+            width: 100%; 
+            height: auto; 
+            margin-bottom: 20px; 
+            } 
+        h1 { 
+            margin-top: 0; 
+            } 
+        p { 
+            margin: 0; 
+            } 
+        @media (min-width: 768px) and (max-width: 1020px) { 
+            body { 
+                background-color: rgb(250, 199, 193); 
+                } 
+            main.content{ 
+                flex-direction: column; 
+                align-items: center; 
+                padding: 0; 
+                } 
+            nav { 
+                width: 100%; 
+                background-color: lightgrey; 
+                min-height: auto; 
+                margin: 0;
+                padding: 0;
+                } 
+            nav ul { 
+                display: flex; 
+                justify-content:end; 
+                padding: 0; 
+                margin: 0; 
+                max-width: 100%;
+                } 
+            nav ul li { 
+                border-bottom: none; 
+                border-right: 2px solid black;
+                padding: 10px; 
+                } 
+            nav ul li:last-child { 
+                border-right: none; 
+                } 
+            .content-text { 
+                display: flex; 
+                flex-direction: column; 
+                gap: 20px; 
+                padding: 20px 20px 20px 40px; 
+                width: 100%;
+                } 
+            .top-row { 
+                display: flex; 
+                flex-direction: row; 
+                align-items: flex-start; 
+                gap: 20px; 
+                justify-content: center; 
+                } 
+            .top-row img { 
+                width: 100%; 
+                max-width: 500px; 
+                height: auto; 
+                margin: 0;
+                } 
+            .top-row h1 { 
+                margin: 0; 
+                align-self: center; 
+                text-align: left; 
+                } 
+            .content-text p { 
+                text-align: left; 
+                max-width: 100%; 
+                margin: 0 auto; 
+                } 
+                } 
+        @media (min-width: 1021px) { 
+            body { 
+                background-color: mistyrose; 
+                margin: 0; 
+                } 
+            nav { 
+                background-color: rgb(200, 126, 126); 
+                width: 100%; 
+                padding: 10px 40px; 
+                height: auto; 
+                min-height: 0; 
+                display: flex; 
+                align-items: center; 
+                } 
+            nav ul { 
+                list-style: none; 
+                margin: 0; 
+                padding: 0; 
+                display: flex; 
+                justify-content: flex-end; 
+                gap: 30px; 
+                } 
+            nav ul li { 
+                display: inline-block; 
+                border: none; 
+                font-weight: bold; 
+                } 
+            nav ul li a { 
+                text-decoration: none; 
+                color: black; 
+                font-size: 1.1rem; 
+                } 
+            main.content { 
+                display: flex; 
+                flex-direction: column; 
+                gap: 40px; 
+                padding: 40px; 
+                align-items: stretch; 
+                } 
+            .top-row { 
+                display: flex; 
+                flex-direction: row; 
+                gap: 40px; 
+                justify-content: space-between; 
+                align-items: center; 
+                } 
+            .top-row h1 { 
+                flex: 1; 
+                font-size: 2.5rem; 
+                margin: -80px; 
+                text-align: left; 
+                color: rgb(57, 152, 150);
+                } 
+            .top-row img { 
+                flex: 1;
+                max-width: 100%; 
+                height: auto; 
+                margin: 0; 
+                } 
+            .content-text p { 
+                margin-top: 40px; 
+                font-size: 1.1rem; 
+                line-height: 1.6; 
+                text-align: left;
+                max-width: 100%; 
+                padding: 0;
+                margin-left: 0;
+                } 
+         } 
+    </style> 
+</head> 
+<body> 
+    <main class="content"> 
+        <nav> 
+            <ul> 
+                <li><a href="#">Our Story</a></li> 
+                <li><a href="#">Menu</a></li> 
+                <li><a href="#">Contact</a></li>
+             </ul> 
+        </nav> 
+        <div class="content-text"> 
+        <div class="top-row"> 
+            <img src="https://www.huckleberrycafe.com/wp-content/uploads/2023/07/Huckleberry_06.16.23_13.jpg" alt="Bakery Image">
+             <h1>Menuca Bakery</h1>
+        </div> 
+         <p> Welcome to Menuca! We bake fresh and tasty breads, cakes, and pastries with love and care. Come taste the sweetness of our story! Our bakery is known for its warm, inviting atmosphere and the aroma of freshly baked goods that fills the air each morning. From buttery croissants and crusty sourdough to rich chocolate cakes and delicate fruit tarts, every item is crafted with quality ingredients and a passion for tradition. Whether you are stopping by for a quick coffee, celebrating a special occasion, or simply craving something sweet, Menuca Bakery is here to bring comfort and joy to your day.
+         </p> 
+        </div>
+ </main> 
+ <footer></footer>
+ </body>
+ </html>
