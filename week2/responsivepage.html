@@ -10,6 +10,10 @@
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
             background-color: mistyrose; 
             } 
+
+        header{
+            float: left;
+        }
         main.content { 
             display: flex; 
             flex-direction: row; 
@@ -38,7 +42,6 @@
             } 
         .content-text { 
             flex: 1; 
-            padding: 20px; 
             } 
         .content-text img { 
             width: 100%; 
@@ -51,14 +54,19 @@
         p { 
             margin: 0; 
             } 
+
         @media (min-width: 768px) and (max-width: 1020px) { 
             body { 
                 background-color: rgb(250, 199, 193); 
                 } 
+            
+            header{
+                float: none;
+            }
             main.content{ 
                 flex-direction: column; 
                 align-items: center; 
-                padding: 0; 
+                padding: 20px; 
                 } 
             nav { 
                 width: 100%; 
@@ -85,8 +93,7 @@
             .content-text { 
                 display: flex; 
                 flex-direction: column; 
-                gap: 20px; 
-                padding: 20px 20px 20px 40px; 
+                gap: 20px;  
                 width: 100%;
                 } 
             .top-row { 
@@ -118,6 +125,9 @@
                 background-color: mistyrose; 
                 margin: 0; 
                 } 
+            header{
+                float: none;
+            }
             nav { 
                 background-color: rgb(200, 126, 126); 
                 width: 100%; 
@@ -185,7 +195,7 @@
     </style> 
 </head> 
 <body> 
-    <main class="content"> 
+    <header>
         <nav> 
             <ul> 
                 <li><a href="#">Our Story</a></li> 
@@ -193,6 +203,8 @@
                 <li><a href="#">Contact</a></li>
              </ul> 
         </nav> 
+    </header>
+    <main class="content"> 
         <div class="content-text"> 
         <div class="top-row"> 
             <img src="https://www.huckleberrycafe.com/wp-content/uploads/2023/07/Huckleberry_06.16.23_13.jpg" alt="Bakery Image">
