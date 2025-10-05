@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;}
+
+.nav {
+    background-color: pink; 
+    width: 100%; 
+    position: fixed; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    padding: 1rem 2rem; 
+}
+
+
+.nav li {
+    margin-left: 2rem;
+}
+
+
+body{
+    margin: 0;
+}
+
+#colorStage{
+    height: 400px;
+}
+
+#quokkaImage{
+    width: 80%;
+}
+
+.thumbnails{
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+.thumbnails li{
+    padding: 8px;
+}
+
+.current-thumb{
+    background-color: pink;
+}
+
+.imgShowcase{
+    padding: 8px;
+    position: relative;
+}
+
+.showcase-arrow{
+    width: 140px;
+    height: 150px;
+    position: absolute;
+    top: 50%;
+    background-color: rgba(150, 150, 150, 0.3);
+    padding: 8px;
+    margin: -29px 8px 0 8px;
+}
+
+.showcase-arrow-left{
+    left: 0;
+}
+
+.showcase-arrow-right{
+    right: 0;
+}
