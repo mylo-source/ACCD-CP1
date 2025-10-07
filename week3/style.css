@@ -58,6 +58,9 @@ body{
 
 .thumbnails{
     padding: 0;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
     list-style: none;
     display: flex;
     flex-direction: row;
@@ -87,13 +90,13 @@ body{
 }
 
 .showcase-arrow{
-    width: 120px;
+    width: 200px;
     height: 170px;
     position: absolute;
     top: 50%;
     background-color: transparent;
     padding: 8px;
-    margin: -50px 8px 0 8px;
+    margin: -30px 8px 0 8px;
 }
 
 .showcase-arrow-left{
