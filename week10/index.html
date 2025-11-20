@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Sketch Documentation</title>
+    <style>
+    body { 
+      font-family: sans-serif; 
+      background: #111; 
+      color: #fff; 
+      line-height: 1.5;
+      margin: 20px;
+    }
+
+    h1, h2 {
+      text-align: left;   /* headings centered */
+    }
+
+    p, ul {
+      text-align: left;     /* paragraphs and lists left-aligned */
+      max-width: 600px;
+      margin: 0 auto 10px auto; /* keep block centered but text left-aligned */
+    }
+
+    img { 
+      display: block;       /* ensures images are centered */
+      margin: 15px auto; 
+      max-width: 300px; 
+      border: 2px solid #fff; 
+    }
+
+    .iteration { 
+      margin-bottom: 30px; 
+    }
+
+    iframe {
+      display: block;         /* treat like block element */
+      margin: 15px auto;      /* center horizontally */
+      width: 800px;
+      height: 800px;
+      border: none;
+      box-shadow: 0 0 20px rgba(255,255,255,0.2);
+      border-radius: 10px;
+}
+  </style>
+</head>
+<body>
+
+     <h1>Time and Oscillation: Watch Sketch Documentation</h1>
+
+     <h2>Inspiration</h2>
+
+     <p>
+        Experiencing somewhat of a 'creative block' after hearing about the requirements of this assignment,
+        I approached my partner in hopes of spurring my creativity again. He is someone who is very passionate about watches, 
+        and as soon as I remembered this, my creativity sparked again! 
+     </p>
+
+     <p>
+        Watches naturally embody 'time', oscillation, and precision, 
+        thus making it an ideal space for experimentation. 
+     </p>
+
+     <p>
+        Overall, this project allowed me not only to further develop my p5.js coding skills 
+        but also create something meaningful that I knew would make my partner proud!
+     </p>
+
+     <h2>Features</h2>
+  <p>
+     I wanted my sketch to include several key features:
+  </p>
+  <ul>
+    <li>A watch shape composed of simple 2D geometric shapes (circles for the dial and rectangles for the straps).</li>
+    <li>A gear wheel that rotates continuously, adding a sense of mechanical movement.</li>
+    <li>A dynamic arc dial inspired by last week’s exercise, with the arcs fine-tuned in color. The arc dial changes colors (always within cool tones) both when the page is refreshed and when the second hand hits 12, and exhibits a subtle wobble for a more organic, lively feel.</li>
+    <li>Two hands moving around the watch face at different speeds, representing minutes and seconds, with randomized warm colors for contrast.</li>
+  </ul>
+
+   <h2>Iterations</h2>
+
+   <div class="iteration">
+    <img src="images/Iteration1.png" alt="Iteration 1">
+    <p>Iteration 1: I first worked on the basic watch shape. 
+        It is composed of only simple 2D shapes: a circle for the watch dial and 
+        2 rectangles for the straps.</p>
+  </div>
+
+  <div class="iteration">
+    <img src="images/Iteration2.png" alt="Iteration 2">
+    <p>Iteration 2: I then added a continously moving gear wheel. 
+        The gear’s motion uses trigonometric functions (specifically the cos and sin functions) to calculate the positions 
+        of the gear’s spokes around the circle to create a smooth, and circular rotation that mimics real watch mechanics.</p>
+  </div>
+
+  <div class="iteration">
+    <img src="images/Iteration3.png" alt="Iteration 3">
+    <p>Iteration 3: I then moved to the intial design of the arc background for the dial based on the code we learned last week. 
+        The arcs use trigonometric functions to oscillate smoothly, and the colors are randomly assigned from cool tones (green, purple, and blue).</p>
+  </div>
+
+  <div class="iteration">
+    <img src="images/Iteration4.png" alt="Iteration 4">
+    <p>Iteration 4: Then came designing the longer hand. This hand rotates around the dial and is displayed in a random warm color (orange, yellow, and red)
+        that is reassigned each time the page is refreshed.</p>
+  </div>
+
+  <div class="iteration">
+    <img src="images/Iteration5.png" alt="Iteration 5">
+    <p>Iteration 5: I then added a shorter hand. This hand moves more slowly than the longer hand and is also randomly assigned a warm color 
+        each time the page is refreshed.</p>
+  </div>
+
+<div class="iteration">
+    <img src="images/Iteration6.png" alt="Iteration 6">
+    <p>Iteration 6: This iteration shows the final prototype where I experimented further with the arc dial features. 
+        At this phase, the arc dial randomly changes to cool tones whenever the page is refreshed OR when the longer hand hits '12'. 
+        Additionally, each time the longer hand hits '12', the arcs exhibit a subtle wobble effect, briefly turning white before it shifts to the next cool tone.</p>
+  </div>
+
+  <h2>Final Prototype</h2>
+
+  <p>This is my final watch prototype with all features implemented.</p>
+
+  <iframe src="https://editor.p5js.org/mmanekia/full/kryqbsix_"></iframe>
+    
+</body>
+</html>
