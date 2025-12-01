@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Carbonated Drink Simulation Documentation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: #05060a;
+      color: #f5f5f5;
+    }
+
+    .page {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      text-align: center;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtitle {
+      text-align: center;
+      color: #c4c4c4;
+      margin-bottom: 2.5rem;
+      font-size: 0.98rem;
+    }
+
+    p {
+      line-height: 1.6;
+      font-size: 0.98rem;
+      margin: 0 0 1rem;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #30323a;
+      margin: 2.5rem 0;
+    }
+
+    figure {
+      margin: 1.5rem 0;
+      text-align: center;
+    }
+
+    figure img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 8px;
+      border: 1px solid #30323a;
+      background: #0b0c12;
+    }
+
+    figcaption {
+      font-size: 0.85rem;
+      color: #c4c4c4;
+      margin-top: 0.4rem;
+    }
+
+    .iframe-wrapper {
+      display: flex;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    iframe {
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+      background: #000;
+    }
+
+    .meta {
+      font-size: 0.85rem;
+      color: #a0a0a0;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .code-note {
+      font-size: 0.85rem;
+      color: #a0a0a0;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>Carbonated Drink Simulation</h1>
+   
+    <section>
+      <h2>Intent</h2>
+      <p>
+        As a lover of anything fizzy, a system that I wanted to explore was <strong>carbonated
+        drinks</strong> and their tendency to bubble under pressure, and potentially,
+        <em>explode</em> if shaken too much. I must say that this is a deceptively simple
+        everyday phenomenon, but once broken down, it reveals a whole network of
+        interacting relationships: internal pressure, bubble formation, fluid
+        dynamics, the strength of the bottle cap, and the cascading outcome that
+        occurs once pressure exceeds a certain threshold.
+      </p>
+    </section>
+
+    <hr />
+
+    <section>
+      <h2>Process</h2>
+      <p>
+        I began by constructing a <strong>UML diagram</strong> and a
+        <strong>flowchart</strong> to map out my thinking into applicable logic for code. This proved to be extremely useful for mapping
+        out the system in its entirety before jumping into the deep end. These diagrams
+        helped me determine the key objects needed for the simulation, their properties and behaviors, and how
+        they would interact with one another.
+      </p>
+
+      <figure>
+        <!-- Replace uml-diagram.png with your UML image filename -->
+        <img src="images/uml.png" alt="UML diagram of the carbonated drink system" />
+        <figcaption>UML Class Diagram: Bottle, Cap, Bubble, and WaterSplash relationships.</figcaption>
+      </figure>
+
+      <figure>
+        <!-- Replace flowchart.png with your flowchart image filename -->
+        <img src="images/flowchart.png" alt="Flowchart of the carbonated bottle behaviour" />
+        <figcaption>Flowchart: cause-and-effect logic of shaking, pressure, cap popping, and spill.</figcaption>
+      </figure>
+
+      <p>In my system, there are four primary objects: </p>
+      <ul>
+        <li><strong>Bottle</strong></li>
+        <li><strong>Cap</strong></li>
+        <li><strong>Bubbles</strong> within the liquid</li>
+        <li><strong>WaterSplash</strong> that emerges when the cap bursts</li>
+      </ul>
+      
+      <p>
+        Because this concept was more complex than what we covered in class, I
+        did use <strong>artificial intelligence</strong> to help structure and
+        debug the code. Together, we iterated on each class so that the
+        relationships between objects felt coherent, reactive and mirrored what I had mapped out in my diagrams.
+      </p>
+      <p>
+        To simulate pressure and make it user-controlled, I made the bottle
+        interactive: the user must <strong>click repeatedly and quickly</strong>
+        to build pressure high enough for the cap to burst. I also added
+        additional forms of indirect control: a <strong>dropdown</strong> to
+        change the drink type (sparkling water, Coke, Fanta, lemonade), which alters
+        the liquid’s color, and a <strong>tilt slider</strong> that rotates the
+        bottle and affects the direction of the splash when the cap pops.
+      </p>
+      <p>
+        An essential component for making this concept come to life was <strong>feedback</strong>.
+        Users needed to understand how close they were to popping the cap, so I
+        implemented a <strong>pressure bar</strong> that fills as they click. This provides clarity
+        for the user in terms of actions they must take moving forward depending on if they want the cap to pop off.
+      </p>
+      <p>
+        Looking back, the entire process was highly iterative. As I continued working, new
+        ideas emerged regarding how to make the simulation more dynamic,
+        refined, and realistic. For example, at first the splash appeared when
+        the cap popped, but the liquid inside the bottle remained constant.
+        To make it resemble what we would see in real life, I implemented a <strong>liquid-level system</strong> so the fluid
+        visibly drains as it sprays out. This is just one of many revisions that
+        evolved the project from a simple prototype into a more realistic and
+        expressive system.
+      </p>
+      <p>
+        Overall, this has been one of the most challenging projects I’ve
+        completed in this class. At the same time, however, it has also been one of the most fun and creatively rewarding.
+        I found that the complexity of the system I set out to create opened up a lot of room for experimentation,
+        playfulness, and exploration. I’m very proud of how interactive,
+        responsive, and engaging the final concept became!
+      </p>
+    </section>
+
+    <hr />
+
+
+    <section>
+      <h2>Interactive P5.js Sketch</h2>
+      <p>
+        The sketch below is the final interactive simulation built in P5.js. Click the bottle
+        repeatedly to build pressure and attempt to pop the cap. Use the drink selector and tilt
+        slider above the canvas in the embedded sketch to change the liquid type and splash
+        direction.
+      </p>
+
+      <div class="iframe-wrapper">
+        <iframe src="https://editor.p5js.org/mmanekia/full/2GSkUPdoF"
+        style="
+                 width: 100%;
+                max-width: 1000px;
+                height: 900px;
+                border: none;
+  "></iframe>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
