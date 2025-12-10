@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Red Light, Green Light – Gesture ML Prototype</title>
+
+  <style>
+    :root {
+      --pink: #b23874;
+      --red: #d44747;
+      --light-red: #ff7b7b;
+
+      --green1: #8ec7d3;
+      --green2: #568e99;
+      --green3: #1f5968;
+      --green4: #0f2f3a;
+      --blackgreen: #070b0d;
+
+      --white: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(155deg, var(--green4), var(--blackgreen));
+      font-family: Arial, sans-serif;
+      color: var(--white);
+      line-height: 1.55;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header h1 {
+      font-size: 2.4rem;
+      margin: 0;
+      color: var(--green1);
+      text-shadow: 
+        0 0 10px rgba(142, 199, 211, 0.4),
+        0 0 18px rgba(178, 56, 116, 0.3);
+      font-weight: bold;
+    }
+
+    /* SYMBOLS UNDER HEADER */
+    .symbols {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 18px;
+    }
+
+    .symbol {
+      font-size: 2rem;
+      color: var(--pink);
+      text-shadow: 0 0 10px rgba(178,56,116,0.5);
+    }
+
+    /* SECTION PANELS */
+    .section {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(31, 89, 104, 0.52);
+      border-radius: 14px;
+      border: 1px solid rgba(178, 56, 116, 0.3);
+      box-shadow:
+        0 0 12px rgba(178, 56, 116, 0.25),
+        0 0 25px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(4px);
+    }
+
+    .section h2 {
+      margin-top: 0;
+      color: var(--pink);
+      font-weight: bold;
+      text-shadow: 0 0 8px rgba(178, 56, 116, 0.5);
+      border-left: 5px solid var(--red);
+      padding-left: 12px;
+    }
+
+    /* SECTION DIVIDER SYMBOLS */
+    .divider {
+      text-align: center;
+      font-size: 2rem;
+      margin: 50px 0 -10px 0;
+      color: var(--pink);
+      letter-spacing: 15px;
+      text-shadow: 0 0 10px rgba(178,56,116,0.5);
+    }
+
+    /* Pink accent info box */
+    .accent {
+      background: linear-gradient(135deg, rgba(178,56,116,0.3), rgba(255,123,123,0.15));
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px solid rgba(255,123,123,0.3);
+      margin: 20px 0;
+      box-shadow: 0 0 12px rgba(178, 56, 116, 0.25);
+    }
+
+    img {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 10px;
+      border: 2px solid rgba(255, 123, 123, 0.4);
+      box-shadow: 0 0 15px rgba(178,56,116,0.25);
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: none;
+      border-radius: 12px;
+      margin-top: 15px;
+      box-shadow: 0 0 25px rgba(178, 56, 116, 0.45);
+    }
+
+    ul { margin-top: 5px; }
+
+    .mini-title {
+        text-align: center;
+        font-size: 1.1rem;
+        font-weight: bold;
+        color: var(--green1);
+        margin-top: 10px;
+        margin-bottom: -5px;
+        text-shadow: 0 0 6px rgba(142, 199, 211, 0.4);
+        letter-spacing: 0.5px;
+}
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Red Light, Green Light – Gesture-Controlled ML Prototype</h1>
+
+  <!-- SYMBOLS ADDED HERE -->
+  <div class="symbols">
+    <span class="symbol">●</span>
+    <span class="symbol">▲</span>
+    <span class="symbol">■</span>
+  </div>
+</header>
+
+
+<div class="section">
+  <h2>Inspiration</h2>
+  <p>
+    This project is inspired by the “Red Light, Green Light” challenge ("무궁화 꽃이 피었습니다"-Mugunghwa kkochi pieotseumnida) from <i>Squid Game</i>. 
+    In the show, players advance toward a finish line but must freeze completely when a large doll-like machine 
+    turns around to detect movement.
+  </p>
+
+  <img src="images/realLifeinspo.png" alt="realLifeinspo">
+  <p>
+    In class, we explored Teachable Machine and ml5.js for webcam-based image classification. 
+    This week, I believe we are exploring gestures! This, in particular, made me want to build a version of the game where the player’s <strong>body</strong> 
+    becomes the only controller — no keyboard or mouse.
+  </p>
+</div>
+
+<div class="divider">● ▲ ■</div>
+
+<div class="section">
+  <h2>Concept Overview</h2>
+  <p>
+    When the Green Light symbol is on, players move their on-screen character towards the finish line by performing a specifically-trained 
+    <strong>Move Gesture</strong> in front of the webcam. Alongside this, users can visually hear the famous audio that accompanies the players in this challenge.
+    Once the audio ends, the game switches to Red Light (green symbol turns off, red symbol turns on) and
+    the player has to return to a <strong>Still Pose</strong> to avoid detection by the 'statue' at the top of the field.
+  </p>
+
+  <div class="accent">
+    <strong>Goal:</strong> Reach the finish line without being detected by the statue during Red Light.
+  </div>
+</div>
+
+<div class="divider">● ▲ ■</div>
+
+<div class="section">
+  <h2>How It Works (Game Rules)</h2>
+
+  <p><strong style="color: var(--green1);">Green Light</strong></p>
+  <ul>
+    <li>Green Light Symbol on</li>
+    <li>Audio plays</li>
+    <li>Statue faces away</li>
+    <li>Move Gesture made by player moves on-screen character</li>
+  </ul>
+
+  <p><strong style="color: var(--red);">Red Light</strong></p>
+  <ul>
+    <li>Red light symbol on</li>
+    <li>Audio stops</li>
+    <li>Statue faces on-screen character</li>
+    <li>Player must hold Still Pose.</li>
+    <li>Any movement → immediate loss.</li>
+  </ul>
+
+  <div class="accent">
+    <strong>Win Condition:</strong> Reach the finish line during any Green Light phase.
+  </div>
+</div>
+
+<div class="divider">● ▲ ■</div>
+
+<div class="section">
+  <h2>Physical ↔ Digital Mapping</h2>
+  <p>This game uses the player's body as the complete input system.</p>
+
+  <p><strong style="color: var(--green1);">Physical Inputs</strong></p>
+  <ul>
+    <li>Move Gesture (maybe an arm raised?)</li>
+    <li>Still Pose (neutral posture)</li>
+  </ul>
+
+  <p><strong style="color: var(--pink);">Digital Output</strong></p>
+  <ul>
+    <li>Move Gesture → makes character moves upwards (Green Light only)</li>
+    <li>Still Pose → no movement</li>
+    <li>Movement during Red Light = loss</li>
+  </ul>
+</div>
+
+<div class="divider">● ▲ ■</div>
+
+<div class="section">
+  <h2>Technical Plan</h2>
+
+  <p><strong>1. Teachable Machine Model:</strong></p>
+  <ul>
+    <li>Move Gesture</li>
+    <li>Still Pose</li>
+  </ul>
+
+  <p><strong>2. Game States:</strong></p>
+  <ul>
+    <li>"green"</li>
+    <li>"red"</li>
+    <li>"win"</li>
+    <li>"lose"</li>
+  </ul>
+
+  <p><strong>3. Movement Logic:</strong></p>
+  <ul>
+    <li>Green + Move Gesture → move</li>
+    <li>Red + anything except Still Pose → lose</li>
+  </ul>
+
+  <p><strong>4. Visual Components:</strong></p>
+  <ul>
+    <li>Field + start/finish lines</li>
+    <li>Green Light & Red Light icons</li>
+    <li>Player icon (simple shape)</li>
+    <li>Statue (simple shapes; turns red or green based on state)</li>
+    <li>Webcam preview</li>
+    <li>Basic feedback messages (“You Win”, "You Lose")</li>
+  </ul>
+
+  
+  <img src="images/interfacesketch.jpg" alt="sketch1">
+  <div class="mini-title">Interface Diagram Sketch</div>
+
+  <p><strong>5. Timing:</strong></p>
+  <ul>
+    <li>Green Light duration = duration of audio</li>
+    <li>Red Light duration = 3s</li>
+    <li>Cycles continue until win/lose</li>
+  </ul>
+</div>
+
+<div class="divider">● ▲ ■</div>
+
+<div class="section">
+  <h2>Final Prototype (Coming Soon)</h2>
+  <p>The following displays my WIP. Currently, I am struggling with accurate movement detetction and may need to fine tune my learning model. Although, I hope this gives a general idea of what I want my interface to look like.</p>
+  <video controls width="100%" style="border-radius:12px; box-shadow:0 0 25px rgba(178,56,116,0.45);">
+  <source src="video/WIP.mp4" type="video/mp4">
+</video>
+</div>
+
+</body>
+</html>
