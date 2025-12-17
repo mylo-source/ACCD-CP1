@@ -38,13 +38,12 @@
       font-size: 2.4rem;
       margin: 0;
       color: var(--green1);
-      text-shadow: 
-        0 0 10px rgba(142, 199, 211, 0.4),
-        0 0 18px rgba(178, 56, 116, 0.3);
+      text-shadow:
+        0 0 10px rgba(142,199,211,0.4),
+        0 0 18px rgba(178,56,116,0.3);
       font-weight: bold;
     }
 
-    /* SYMBOLS UNDER HEADER */
     .symbols {
       display: flex;
       justify-content: center;
@@ -58,7 +57,6 @@
       text-shadow: 0 0 10px rgba(178,56,116,0.5);
     }
 
-    /* SECTION PANELS */
     .section {
       max-width: 900px;
       margin: 40px auto;
@@ -67,8 +65,8 @@
       border-radius: 14px;
       border: 1px solid rgba(178, 56, 116, 0.3);
       box-shadow:
-        0 0 12px rgba(178, 56, 116, 0.25),
-        0 0 25px rgba(0, 0, 0, 0.4);
+        0 0 12px rgba(178,56,116,0.25),
+        0 0 25px rgba(0,0,0,0.4);
       backdrop-filter: blur(4px);
     }
 
@@ -76,12 +74,11 @@
       margin-top: 0;
       color: var(--pink);
       font-weight: bold;
-      text-shadow: 0 0 8px rgba(178, 56, 116, 0.5);
+      text-shadow: 0 0 8px rgba(178,56,116,0.5);
       border-left: 5px solid var(--red);
       padding-left: 12px;
     }
 
-    /* SECTION DIVIDER SYMBOLS */
     .divider {
       text-align: center;
       font-size: 2rem;
@@ -91,47 +88,64 @@
       text-shadow: 0 0 10px rgba(178,56,116,0.5);
     }
 
-    /* Pink accent info box */
     .accent {
       background: linear-gradient(135deg, rgba(178,56,116,0.3), rgba(255,123,123,0.15));
       padding: 15px;
       border-radius: 10px;
       border: 1px solid rgba(255,123,123,0.3);
       margin: 20px 0;
-      box-shadow: 0 0 12px rgba(178, 56, 116, 0.25);
+      box-shadow: 0 0 12px rgba(178,56,116,0.25);
     }
 
     img {
-      display: block;
-      margin: 20px auto;
       max-width: 100%;
       border-radius: 10px;
-      border: 2px solid rgba(255, 123, 123, 0.4);
+      border: 2px solid rgba(255,123,123,0.4);
       box-shadow: 0 0 15px rgba(178,56,116,0.25);
     }
 
-    iframe {
-      width: 100%;
-      height: 500px;
-      border: none;
-      border-radius: 12px;
-      margin-top: 15px;
-      box-shadow: 0 0 25px rgba(178, 56, 116, 0.45);
-    }
-
-    ul { margin-top: 5px; }
-
-    .mini-title {
-        text-align: center;
-        font-size: 1.1rem;
-        font-weight: bold;
-        color: var(--green1);
-        margin-top: 10px;
-        margin-bottom: -5px;
-        text-shadow: 0 0 6px rgba(142, 199, 211, 0.4);
-        letter-spacing: 0.5px;
+    .figure img {
+  width: 100%;
+  height: 180px;              /* controls vertical size */
+  object-fit: contain;        /* keeps full image visible */
+  background: rgba(0,0,0,0.35);
+  padding: 12px;
+  box-sizing: border-box;
 }
 
+    /* --- NEW: FIGURE + CAPTION SYSTEM --- */
+    .figure {
+      margin: 25px 0;
+      text-align: center;
+    }
+
+    .figure-caption {
+      margin-top: 8px;
+      font-size: 0.95rem;
+      color: var(--green1);
+      text-shadow: 0 0 6px rgba(142,199,211,0.4);
+      letter-spacing: 0.3px;
+    }
+
+    .image-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 25px 0;
+    }
+
+    .image-row .figure {
+      flex: 1 1 240px;
+      max-width: 300px;
+    }
+
+    iframe, video {
+      width: 100%;
+      border-radius: 12px;
+      margin-top: 15px;
+      box-shadow: 0 0 25px rgba(178,56,116,0.45);
+    }
   </style>
 </head>
 
@@ -278,11 +292,141 @@
 <div class="divider">● ▲ ■</div>
 
 <div class="section">
-  <h2>Final Prototype (Coming Soon)</h2>
-  <p>The following displays my WIP. Currently, I am struggling with accurate movement detetction and may need to fine tune my learning model. Although, I hope this gives a general idea of what I want my interface to look like.</p>
+  <h2>WIP Prototype</h2>
+  <p>The following displays my WIP. Currently, I am struggling with accurate movement detection and may need to fine tune my learning model. Although, I hope this gives a general idea of what I want my interface to look like.</p>
   <video controls width="100%" style="border-radius:12px; box-shadow:0 0 25px rgba(178,56,116,0.45);">
   <source src="video/WIP.mp4" type="video/mp4">
 </video>
+</div>
+
+<div class="divider">● ▲ ■</div>
+
+<div class="section">
+  <h2>Iteration & Refinement – Week 2</h2>
+
+  <p>
+    With a solid technical and conceptual foundation in place, and after receiving feedback from my professor (Maxim), I decided to refine both the 
+    interaction logic and the interface of the prototype. Rather than expanding scope, I focused on <strong>stabilizing the system</strong>, with an 
+    emphasis on clarity and strengthening the overall look and feel of the experience.
+  </p>
+
+  <p>
+    One of the most significant changes involved rethinking how the player physically controls the game. Instead of relying on a single trained image-classification
+     gesture for movement and a still pose for freezing, the prototype now uses <strong>ml5.js HandPose and BodyPose models</strong> for more direct and responsive
+    control that works in any environment.
+  </p>
+
+  <p>Specifically, the player now advances towards the finish line by <strong>pinching their thumb and index finger together</strong>, detected through HandPose 
+    tracking. To enforce the “freeze” mechanic during Red Light, the system tracks the player’s <strong>nose position</strong> via the webcam. Any detectable 
+    movement of the nose while the game is in Red Light results in an immediate loss. This shift allowed the interaction to feel a lot more embodied and responsive, 
+    while also reducing reliance on model training and environment calibration.</p>
+
+  <p>After implementing these interaction mechanics, I made the decision to <strong>remove the audio component</strong> of the prototype. Due to time constraints,
+     I felt that I could not explore audio feedback with the depth it deserved. Instead, I pivoted focus to strengthening <strong>visual state feedback</strong> so that 
+     players could clearly understand when they were allowed to move and when they needed to freeze.</p>
+
+  <p>To support this, I introduced several interface elements that communicate game state without relying on text:</p>
+
+  <ul>
+    <li>Red and Green Light indicators embedded in geometric forms</li>
+  </ul>
+
+  <div class="image-row">
+    <div class="figure">
+      <img src="images/GoI.png" alt="Green indicator">
+      <div class="figure-caption">Green Light indicator — movement permitted</div>
+    </div>
+
+    <div class="figure">
+      <img src="images/StopI.png" alt="Red indicator">
+      <div class="figure-caption">Red Light indicator — freeze required</div>
+    </div>
+  </div>
+
+  <ul>
+    <li>Statue scanning behavior reinforcing surveillance</li>
+  </ul>
+
+  <div class="image-row">
+    <div class="figure">
+      <img src="images/Doll1.png" alt="Statue green">
+      <div class="figure-caption">Statue facing away during Green Light</div>
+    </div>
+
+    <div class="figure">
+      <img src="images/Doll2.png" alt="Statue red">
+      <div class="figure-caption">Statue scanning the field during Red Light</div>
+    </div>
+  </div>
+
+  <ul>
+    <li>State-based glowing borders applied consistently</li>
+  </ul>
+
+  <div class="image-row">
+    <div class="figure">
+      <img src="images/StateI.png" alt="Idle state">
+      <div class="figure-caption">Idle state — neutral pink glow</div>
+    </div>
+
+    <div class="figure">
+      <img src="images/StateG.png" alt="Green state">
+      <div class="figure-caption">Green Light — movement allowed</div>
+    </div>
+
+    <div class="figure">
+      <img src="images/StateS.png" alt="Red state">
+      <div class="figure-caption">Red Light — movement detection active</div>
+    </div>
+  </div>
+
+  <p>Once the core interaction and feedback systems were stable, I focused on <strong>UI refinement and cohesion</strong>. 
+    This included applying a consistent Squid Game–inspired visual theme across the interface (shapes, color palettes, typography, 
+    and layout) — to create a more aligned experience.</p>
+
+  <div class="figure">
+    <img src="images/Squid.png" alt="Visual theme">
+    <div class="figure-caption">Squid Game–inspired color palette and geometry</div>
+  </div>
+
+  <p>I also refined the game flow by introducing  <strong>Start</strong> and <strong>Reset</strong> glowing buttons. 
+    In earlier iterations, the game began immediately upon page load, which left little room for players to understand the rules or prepare. 
+    By requiring the user to intentionally start the game, the experience now allows time for orientation and instruction-reading before interaction begins.</p>
+
+  <div class="image-row">
+    <div class="figure">
+      <img src="images/start.png" alt="Start button">
+      <div class="figure-caption">Start button — intentional game entry</div>
+    </div>
+
+    <div class="figure">
+      <img src="images/restart.png" alt="Reset button">
+      <div class="figure-caption">Reset button — appears after win or loss</div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Final Prototype</h2>
+
+  <p><p>
+  Below are several short videos that demonstrate how the game works in practice.
+  Due to privacy considerations related to webcam access, I am unable to embed the live p5.js sketch directly on this page.
+  However, the interactive prototype can be accessed and experienced here:
+  <a href="https://editor.p5js.org/mmanekia/full/EzN8FYUA3" target="_blank" style="color:#8ec7d3;">
+    View the live prototype on p5.js
+  </a>.
+</p> </p>
+
+  <p><strong>WIN CASE</strong></p>
+  <video controls>
+    <source src="video/WIN.mp4" type="video/mp4">
+  </video>
+
+  <p><strong>LOSS CASE</strong></p>
+  <video controls>
+    <source src="video/LOSS.mp4" type="video/mp4">
+  </video>
 </div>
 
 </body>
